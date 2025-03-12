@@ -1,2 +1,1 @@
-# front-end-app-template
-Template for front-end apps
+# Template for front-end apps
