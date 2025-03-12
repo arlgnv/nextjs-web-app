@@ -4,21 +4,31 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "prettier:check": "prettier . --check --ignore-unknown",
+    "prettier:fix": "prettier . --write --ignore-unknown",
+    "typescript:check": "tsc --noEmit",
+    "eslint:check": "eslint .",
+    "eslint:fix": "eslint . --fix",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "prepare": "husky"
   },
   "dependencies": {
+    "next": "15.2.2",
     "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "next": "15.2.2"
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "typescript": "5.8.2",
+    "@tailwindcss/postcss": "4.0.13",
     "@types/node": "22.13.10",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
-    "@tailwindcss/postcss": "4.0.13",
-    "tailwindcss": "4.0.13"
+    "husky": "9.1.7",
+    "lint-staged": "15.4.3",
+    "postcss": "8.5.3",
+    "prettier": "3.5.3",
+    "prettier-plugin-tailwindcss": "0.6.11",
+    "tailwindcss": "4.0.13",
+    "typescript": "5.8.2"
   }
 }
