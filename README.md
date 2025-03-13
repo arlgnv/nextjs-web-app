@@ -1,4 +1,4 @@
-# Template for front-end applications
+# Template for building web applications
 
 ## Prerequisites
 
