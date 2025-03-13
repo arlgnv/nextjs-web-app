@@ -15,13 +15,38 @@ const config = [
     ignores: ['.next/'],
   },
   {
-    name: 'common',
+    name: 'plugin/js',
+    files: ['**/*.{mjs,ts,tsx}'],
+    ...pluginJs.configs.recommended,
+  },
+  {
+    name: 'plugin/next',
+    files: ['**/*.tsx'],
+    plugins: {
+      '@next/next': pluginNext,
+    },
+    rules: {
+      ...pluginNext.configs.recommended.rules,
+      ...pluginNext.configs['core-web-vitals'].rules,
+    },
+  },
+  {
+    name: 'plugin/query',
+    files: ['**/*.tsx'],
+    plugins: {
+      '@tanstack/query': pluginQuery,
+    },
+    rules: {
+      ...pluginQuery.configs['flat/recommended'].at(0)?.rules,
+    },
+  },
+  {
+    name: 'plugin/perfectionist',
     files: ['**/*.{mjs,ts,tsx}'],
     plugins: {
       perfectionist: pluginPerfectionist,
     },
     rules: {
-      ...pluginJs.configs.recommended.rules,
       'perfectionist/sort-imports': [
         'error',
         {
@@ -50,10 +75,38 @@ const config = [
       ],
     },
   },
+  {
+    name: 'plugin/react',
+    files: ['**/*.tsx'],
+    plugins: {
+      react: pluginReact,
+    },
+    rules: {
+      ...pluginReact.configs.flat.recommended.rules,
+      ...pluginReact.configs.flat['jsx-runtime'].rules,
+    },
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+        jsxPragma: null,
+      },
+    },
+  },
+  {
+    name: 'plugin/react-hooks',
+    files: ['**/*.tsx'],
+    plugins: {
+      'react-hooks': pluginReactHooks,
+    },
+    rules: {
+      ...pluginReactHooks.configs['recommended-latest'].rules,
+    },
+  },
   ...[
     ...pluginTypescript.configs.strictTypeChecked,
     ...pluginTypescript.configs.stylisticTypeChecked,
-    ...pluginQuery.configs['flat/recommended'],
   ].map((config) => ({
     ...config,
     files: ['**/*.{ts,tsx}'],
@@ -67,50 +120,6 @@ const config = [
         tsconfigRootDir: import.meta.dirname,
       },
     },
-  },
-  {
-    name: 'next/recommended',
-    files: ['**/*.tsx'],
-    plugins: {
-      '@next/next': pluginNext,
-    },
-    rules: {
-      '@next/next/google-font-display': 'warn',
-      '@next/next/google-font-preconnect': 'warn',
-      '@next/next/next-script-for-ga': 'warn',
-      '@next/next/no-async-client-component': 'warn',
-      '@next/next/no-before-interactive-script-outside-document': 'warn',
-      '@next/next/no-css-tags': 'warn',
-      '@next/next/no-head-element': 'warn',
-      '@next/next/no-html-link-for-pages': 'error',
-      '@next/next/no-img-element': 'warn',
-      '@next/next/no-page-custom-font': 'warn',
-      '@next/next/no-styled-jsx-in-document': 'warn',
-      '@next/next/no-sync-scripts': 'error',
-      '@next/next/no-title-in-document-head': 'warn',
-      '@next/next/no-typos': 'warn',
-      '@next/next/no-unwanted-polyfillio': 'warn',
-      '@next/next/inline-script-id': 'error',
-      '@next/next/no-assign-module-variable': 'error',
-      '@next/next/no-document-import-in-page': 'error',
-      '@next/next/no-duplicate-head': 'error',
-      '@next/next/no-head-import-in-document': 'error',
-      '@next/next/no-script-component-in-head': 'error',
-    },
-  },
-  {
-    name: 'react/recommended',
-    files: ['**/*.tsx'],
-    ...pluginReact.configs.flat.recommended,
-  },
-  {
-    name: 'react/jsx-runtime',
-    files: ['**/*.tsx'],
-    ...pluginReact.configs.flat['jsx-runtime'],
-  },
-  {
-    files: ['**/*.tsx'],
-    ...pluginReactHooks.configs['recommended-latest'],
   },
 ];
 
