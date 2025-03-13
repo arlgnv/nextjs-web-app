@@ -2,8 +2,10 @@
 
 import pluginJs from '@eslint/js';
 import pluginNext from '@next/eslint-plugin-next';
+import pluginQuery from '@tanstack/eslint-plugin-query';
 import pluginPerfectionist from 'eslint-plugin-perfectionist';
 import pluginReact from 'eslint-plugin-react';
+import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginTypescript from 'typescript-eslint';
 
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
@@ -51,6 +53,7 @@ const config = [
   ...[
     ...pluginTypescript.configs.strictTypeChecked,
     ...pluginTypescript.configs.stylisticTypeChecked,
+    ...pluginQuery.configs['flat/recommended'],
   ].map((config) => ({
     ...config,
     files: ['**/*.{ts,tsx}'],
@@ -104,6 +107,10 @@ const config = [
     name: 'react/jsx-runtime',
     files: ['**/*.tsx'],
     ...pluginReact.configs.flat['jsx-runtime'],
+  },
+  {
+    files: ['**/*.tsx'],
+    ...pluginReactHooks.configs['recommended-latest'],
   },
 ];
 
