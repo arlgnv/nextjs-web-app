@@ -1,4 +1,4 @@
-# Template for front-end apps
+# Template for front-end applications
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@
 1. Clone the repository
 
 ```bash
-git clone https://github.com/alagunoff/front-end-app-template.git
+git clone https://github.com/alagunoff/front-end-app.git
 ```
 
 2. Install dependencies
