@@ -1,4 +1,3 @@
-import { ReactQueryProvider } from './_layout/components';
 import './globals.css';
 
 function Layout({
@@ -8,9 +7,7 @@ function Layout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <ReactQueryProvider>{children}</ReactQueryProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

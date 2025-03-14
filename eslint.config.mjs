@@ -2,7 +2,6 @@
 
 import pluginJs from '@eslint/js';
 import pluginNext from '@next/eslint-plugin-next';
-import pluginQuery from '@tanstack/eslint-plugin-query';
 import pluginPerfectionist from 'eslint-plugin-perfectionist';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
@@ -28,16 +27,6 @@ const config = [
     rules: {
       ...pluginNext.configs.recommended.rules,
       ...pluginNext.configs['core-web-vitals'].rules,
-    },
-  },
-  {
-    name: 'plugin/query',
-    files: ['**/*.tsx'],
-    plugins: {
-      '@tanstack/query': pluginQuery,
-    },
-    rules: {
-      ...pluginQuery.configs['flat/recommended'].at(0)?.rules,
     },
   },
   {
