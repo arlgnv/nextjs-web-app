@@ -1,5 +1,11 @@
 {
   "private": true,
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "version": "10.9.2"
+    }
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "prettier:check": "prettier . --check --ignore-unknown",
