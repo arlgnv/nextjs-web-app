@@ -96,20 +96,19 @@ const config = [
   ...[
     ...pluginTypescript.configs.strictTypeChecked,
     ...pluginTypescript.configs.stylisticTypeChecked,
+    {
+      name: 'type-aware-linting',
+      languageOptions: {
+        parserOptions: {
+          projectService: true,
+          tsconfigRootDir: import.meta.dirname,
+        },
+      },
+    },
   ].map((config) => ({
     ...config,
     files: ['**/*.{ts,tsx}'],
   })),
-  {
-    name: 'type-aware-linting',
-    files: ['**/*.{ts,tsx}'],
-    languageOptions: {
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-  },
 ];
 
 export default config;
