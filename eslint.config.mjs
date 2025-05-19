@@ -40,7 +40,6 @@ const config = [
         'error',
         {
           type: 'alphabetical',
-          internalPattern: ['^@/.+'],
           tsconfigRootDir: import.meta.dirname,
           groups: [
             ['builtin-type', 'builtin', 'external-type', 'external'],
