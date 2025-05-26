@@ -3,7 +3,7 @@
 ## Prerequisites
 
 1. [Git](https://git-scm.com) v2.49.0
-2. [Node.js](https://nodejs.org/en) v22.15.1
+2. [Node.js](https://nodejs.org/en) v22.16.0
 
 ## Setting Up
 
