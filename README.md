@@ -1,4 +1,4 @@
-# Template for building web applications
+# Next.js template for building web applications
 
 ## Prerequisites
 
