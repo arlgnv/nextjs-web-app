@@ -10,7 +10,7 @@
 1. Clone the repository
 
 ```bash
-git clone https://github.com/alagunoff/nextjs-web-app.git
+git clone https://github.com/arlgnv/nextjs-web-app.git
 ```
 
 2. Install dependencies
