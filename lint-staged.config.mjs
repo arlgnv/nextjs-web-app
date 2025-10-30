@@ -1,8 +1,6 @@
-// @ts-check
-
 const config = {
   '*': 'prettier --check --ignore-unknown',
-  '*.{mjs,ts,tsx}': 'eslint',
+  '*.{js,mjs,cjs,ts,mts,cts,tsx}': 'eslint',
 };
 
 export default config;
