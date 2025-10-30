@@ -1,39 +1,35 @@
-// @ts-check
+import react from '@eslint-react/eslint-plugin';
+import js from '@eslint/js';
+import next from '@next/eslint-plugin-next';
+import perfectionist from 'eslint-plugin-perfectionist';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import typescript from 'typescript-eslint';
 
-import pluginJs from '@eslint/js';
-import pluginNext from '@next/eslint-plugin-next';
-import pluginPerfectionist from 'eslint-plugin-perfectionist';
-import pluginReact from 'eslint-plugin-react';
-import pluginReactHooks from 'eslint-plugin-react-hooks';
-import pluginTypescript from 'typescript-eslint';
-
-/** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
-const config = [
+const config = defineConfig([
+  globalIgnores(['.next/']),
   {
-    name: 'global-ignores',
-    ignores: ['.next/'],
-  },
-  {
-    name: 'plugin/js',
-    files: ['**/*.{mjs,ts,tsx}'],
-    ...pluginJs.configs.recommended,
-  },
-  {
-    name: 'plugin/next',
+    name: 'react',
     files: ['**/*.tsx'],
-    plugins: {
-      '@next/next': pluginNext,
-    },
-    rules: {
-      ...pluginNext.configs.recommended.rules,
-      ...pluginNext.configs['core-web-vitals'].rules,
-    },
+    extends: [react.configs['strict-type-checked']],
   },
   {
-    name: 'plugin/perfectionist',
+    name: 'js',
     files: ['**/*.{mjs,ts,tsx}'],
     plugins: {
-      perfectionist: pluginPerfectionist,
+      js,
+    },
+    extends: ['js/recommended'],
+  },
+  {
+    name: 'next',
+    files: ['**/*.tsx'],
+    extends: [next.configs['core-web-vitals']],
+  },
+  {
+    name: 'perfectionist',
+    files: ['**/*.{mjs,ts,tsx}'],
+    plugins: {
+      perfectionist,
     },
     rules: {
       'perfectionist/sort-imports': [
@@ -64,50 +60,18 @@ const config = [
     },
   },
   {
-    name: 'plugin/react',
-    files: ['**/*.tsx'],
-    plugins: {
-      react: pluginReact,
-    },
-    rules: {
-      ...pluginReact.configs.flat.recommended.rules,
-      ...pluginReact.configs.flat['jsx-runtime'].rules,
-    },
+    name: 'typescript',
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      typescript.configs.strictTypeChecked,
+      typescript.configs.stylisticTypeChecked,
+    ],
     languageOptions: {
       parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-        jsxPragma: null,
+        projectService: true,
       },
     },
   },
-  {
-    name: 'plugin/react-hooks',
-    files: ['**/*.tsx'],
-    plugins: {
-      'react-hooks': pluginReactHooks,
-    },
-    rules: {
-      ...pluginReactHooks.configs['recommended-latest'].rules,
-    },
-  },
-  ...[
-    ...pluginTypescript.configs.strictTypeChecked,
-    ...pluginTypescript.configs.stylisticTypeChecked,
-    {
-      name: 'type-aware-linting',
-      languageOptions: {
-        parserOptions: {
-          projectService: true,
-          tsconfigRootDir: import.meta.dirname,
-        },
-      },
-    },
-  ].map((config) => ({
-    ...config,
-    files: ['**/*.{ts,tsx}'],
-  })),
-];
+]);
 
 export default config;
