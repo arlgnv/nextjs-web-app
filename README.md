@@ -16,7 +16,7 @@ git clone https://github.com/arlgnv/nextjs-web-app.git
 2. Install dependencies
 
 ```bash
-npm i
+npm install
 ```
 
 ## Development
