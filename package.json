@@ -3,7 +3,7 @@
   "devEngines": {
     "packageManager": {
       "name": "npm",
-      "version": "11.6.1"
+      "version": "11.6.2"
     }
   },
   "scripts": {
