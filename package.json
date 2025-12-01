@@ -13,7 +13,7 @@
     "lint:inspect-config": "eslint --inspect-config",
     "lint:check": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "tsc --noEmit",
+    "type-check": "tsc --noEmit",
     "declutter": "knip --config knip.config.mts",
     "build": "next build",
     "start": "next start",
