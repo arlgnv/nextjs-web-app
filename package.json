@@ -15,6 +15,7 @@
     "lint:fix": "eslint . --fix --cache --cache-location=node_modules/.cache/eslint",
     "type-check": "tsc --noEmit",
     "declutter:check": "knip --config knip.config.mts --cache",
+    "spell-check": "cspell .",
     "build": "next build",
     "start": "next start",
     "prepare": "husky"
