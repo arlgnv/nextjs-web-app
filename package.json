@@ -8,13 +8,13 @@
   },
   "scripts": {
     "dev": "next dev",
-    "format:check": "prettier . --check --ignore-unknown",
-    "format:fix": "prettier . --write --ignore-unknown",
+    "format:check": "prettier . --check --ignore-unknown --cache --cache-location=node_modules/.cache/prettier --cache-strategy metadata",
+    "format:fix": "prettier . --write --ignore-unknown --cache --cache-location=node_modules/.cache/prettier --cache-strategy metadata",
     "lint:inspect-config": "eslint --inspect-config",
-    "lint:check": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "typecheck": "tsc --noEmit",
-    "declutter": "knip --config knip.config.mts",
+    "lint:check": "eslint . --cache --cache-location=node_modules/.cache/eslint",
+    "lint:fix": "eslint . --fix --cache --cache-location=node_modules/.cache/eslint",
+    "type-check": "tsc --noEmit",
+    "declutter:check": "knip --config knip.config.mts --cache",
     "build": "next build",
     "start": "next start",
     "prepare": "husky"
@@ -25,7 +25,11 @@
     "react-dom": "19.2.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "20.1.0",
+    "@commitlint/config-conventional": "20.0.0",
+    "@commitlint/types": "20.0.0",
     "@eslint-react/eslint-plugin": "2.3.13",
+    "@eslint/compat": "2.0.0",
     "@eslint/js": "9.39.1",
     "@next/eslint-plugin-next": "16.0.8",
     "@tailwindcss/postcss": "4.1.17",
@@ -42,6 +46,6 @@
     "prettier-plugin-tailwindcss": "0.7.2",
     "tailwindcss": "4.1.17",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.47.0"
+    "typescript-eslint": "8.48.0"
   }
 }
