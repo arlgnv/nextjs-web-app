@@ -21,9 +21,9 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "next": "16.0.8",
-    "react": "19.2.1",
-    "react-dom": "19.2.1"
+    "next": "16.0.10",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@commitlint/cli": "20.2.0",
@@ -31,22 +31,22 @@
     "@commitlint/types": "20.2.0",
     "@eslint-react/eslint-plugin": "2.3.13",
     "@eslint/compat": "2.0.0",
-    "@eslint/js": "9.39.1",
-    "@next/eslint-plugin-next": "16.0.8",
-    "@tailwindcss/postcss": "4.1.17",
-    "@types/node": "24.10.3",
+    "@eslint/js": "9.39.2",
+    "@next/eslint-plugin-next": "16.0.10",
+    "@tailwindcss/postcss": "4.1.18",
+    "@types/node": "24.10.4",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "babel-plugin-react-compiler": "1.0.0",
     "cspell": "9.4.0",
-    "eslint": "9.39.1",
+    "eslint": "9.39.2",
     "eslint-plugin-perfectionist": "4.15.1",
     "husky": "9.1.7",
-    "knip": "5.73.3",
+    "knip": "5.73.4",
     "lint-staged": "16.2.7",
     "prettier": "3.7.4",
     "prettier-plugin-tailwindcss": "0.7.2",
-    "tailwindcss": "4.1.17",
+    "tailwindcss": "4.1.18",
     "typescript": "5.9.3",
     "typescript-eslint": "8.49.0"
   }
