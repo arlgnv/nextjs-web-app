@@ -7,4 +7,4 @@ const config: KnipConfig = {
   },
 };
 
-export default config;
+module.exports = config;

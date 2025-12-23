@@ -14,7 +14,7 @@
     "lint:check": "eslint . --cache --cache-location=node_modules/.cache/eslint",
     "lint:fix": "eslint . --fix --cache --cache-location=node_modules/.cache/eslint",
     "type-check": "tsc --noEmit",
-    "declutter:check": "knip --config knip.config.mts --cache",
+    "declutter:check": "knip --cache",
     "spell-check": "cspell .",
     "build": "next build",
     "start": "next start",
