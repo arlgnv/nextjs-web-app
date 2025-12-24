@@ -13,22 +13,12 @@ const config = defineConfig([
     '.gitignore patterns',
   ),
   {
-    name: 'React',
-    files: ['**/*.tsx'],
-    extends: [react.configs['strict-type-checked']],
-  },
-  {
     name: 'JavaScript',
     files: ['**/*.{mjs,ts,mts,tsx}'],
     plugins: {
       js,
     },
     extends: ['js/recommended'],
-  },
-  {
-    name: 'Next.js',
-    files: ['**/*.tsx'],
-    extends: [next.configs['core-web-vitals']],
   },
   {
     name: 'Perfectionist',
@@ -80,6 +70,16 @@ const config = defineConfig([
       ],
       '@typescript-eslint/no-import-type-side-effects': 'error',
     },
+  },
+  {
+    name: 'React',
+    files: ['**/*.tsx'],
+    extends: [react.configs['strict-type-checked']],
+  },
+  {
+    name: 'Next.js',
+    files: ['**/*.tsx'],
+    extends: [next.configs['core-web-vitals']],
   },
 ]);
 
