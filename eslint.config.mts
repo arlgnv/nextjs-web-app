@@ -21,7 +21,7 @@ const config = defineConfig([
     extends: ['js/recommended'],
   },
   {
-    name: 'Perfectionist',
+    name: 'Sorting',
     files: ['**/*.{mjs,ts,mts,tsx}'],
     plugins: {
       perfectionist,
