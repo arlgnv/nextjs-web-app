@@ -2,7 +2,7 @@ import { defineConfig } from 'cspell';
 
 const config = defineConfig({
   useGitignore: true,
-  words: ['commitlint', 'knip', 'coderabbit', 'docstrings', 'esm'],
+  words: ['commitlint', 'knip', 'coderabbit', 'docstrings', 'esm', 'arlgnv'],
 });
 
 export default config;
