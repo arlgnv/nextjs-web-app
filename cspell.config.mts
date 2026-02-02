@@ -2,14 +2,13 @@ import { defineConfig } from 'cspell';
 
 const config = defineConfig({
   useGitignore: true,
-  words: [
-    'commitlint',
-    'knip',
-    'coderabbit',
-    'docstrings',
-    'esm',
-    'arlgnv',
-    'cli',
+  dictionaries: ['project-words'],
+  dictionaryDefinitions: [
+    {
+      name: 'project-words',
+      path: 'project-words.txt',
+      addWords: true,
+    },
   ],
 });
 
